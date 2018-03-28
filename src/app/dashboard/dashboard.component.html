@@ -1,5 +1,33 @@
 <nz-card>
   <ng-template #body>
-    dashboard works! dashboard works! dashboard works! dashboard works! dashboard works!
+    <p class="success">
+      2018-01-01 23:11:12 成功接收回款共计 83,747.23元
+    </p>
+  </ng-template>
+</nz-card>
+
+<nz-card nzNoHovering>
+  <ng-template #title>总览</ng-template>
+  <ng-template #body>
+    <div nz-row [nzGutter]="3">
+      <div *ngFor="let item of items" nz-col [nzSpan]="6">
+        <nz-card>
+          <ng-template #title>
+            {{item.title}}
+          </ng-template>
+          <ng-template #body>
+            <p>{{item.money}}</p>
+            <p>前日：{{item.yestoday}}</p>
+          </ng-template>
+        </nz-card>
+      </div>
+    </div>
+
+    <div nz-row [nzGutter]="4">
+      <div *ngFor="let bb of bbs" nz-col [nzSpan]="6">
+        <p>{{bb.money}}</p>
+        <p>{{bb.title}}</p>
+      </div>
+    </div>
   </ng-template>
 </nz-card>

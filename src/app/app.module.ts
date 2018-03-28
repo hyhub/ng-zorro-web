@@ -10,6 +10,7 @@ import {FooterComponent} from './footer/footer.component';
 import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {MenuService} from './menu.service';
+import {ItemService} from './dashboard/item.service';
 
 const routeConfig: Routes = [
   {path: '', component: DashboardComponent},
@@ -31,7 +32,7 @@ const routeConfig: Routes = [
     RouterModule.forRoot(routeConfig),
     NgZorroAntdModule.forRoot({extraFontName: 'anticon', extraFontUrl: './assets/fonts/iconfont'})
   ],
-  providers: [{provide: NZ_LOCALE, useValue: zhCN}, MenuService],
+  providers: [{provide: NZ_LOCALE, useValue: zhCN}, MenuService, ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
