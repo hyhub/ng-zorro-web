@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Menu, MenuService} from '../menu.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() {
+  public menus: Array<Menu>;
+
+  constructor(private menService: MenuService) {
   }
 
   ngOnInit() {
+    // this.menus = this.menService.loadMenus();//如果需要加权限或者动态菜单
   }
 }

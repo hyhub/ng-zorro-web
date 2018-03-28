@@ -1,15 +1,39 @@
-<nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-  <div class="logo">
-  </div>
-  <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
-    <li nz-menu-item>
-      <span title><i class="anticon anticon-user"></i><span class="nav-text">订单管理</span></span>
-    </li>
-    <li nz-menu-item>
-      <span title><i class="anticon anticon-team"></i><span class="nav-text">贷款管理</span></span>
-    </li>
-    <li nz-menu-item>
-      <span title><i class="anticon anticon-team"></i><span class="nav-text">还款管理</span></span>
-    </li>
-  </ul>
-</nz-sider>
+<ul nz-menu [nzMode]="'inline'" style="width: 240px;" [nzTheme]="theme?'dark':'light'">
+  <li nz-menu-item [nzSelected]="true" [routerLink]="['']">
+    <span title>Dashboard</span>
+  </li>
+  <li nz-submenu [nzOpen]="true">
+    <span title><i class="anticon anticon-user"></i> 用户管理 </span>
+    <ul>
+      <li nz-submenu [routerLink]="['/menu','7']">
+        <span title>商户列表</span>
+        <ul>
+          <li nz-menu-item><a [routerLink]="['/menu','7']">Option 7</a></li>
+          <li nz-menu-item><a [routerLink]="['/menu','8']">Option 8</a></li>
+        </ul>
+      </li>
+      <li nz-menu-item>商户授信列表</li>
+      <li nz-menu-item>供应商列表</li>
+    </ul>
+  </li>
+  <li nz-submenu>
+    <span title><i class="anticon anticon-bars"></i> 订单管理 </span>
+  </li>
+  <li nz-submenu>
+    <span title><i class="anticon anticon-bank"></i> 贷款管理 </span>
+  </li>
+  <li nz-submenu>
+    <span title><i class="anticon anticon-wallet"></i> 还贷管理 </span>
+  </li>
+  <li nz-submenu>
+    <span title><i class="anticon anticon-check-square-o"></i> 账户对账 </span>
+  </li>
+  <li nz-submenu>
+    <span title><i class="anticon anticon-area-chart"></i> 数据分析 </span>
+    <ul>
+      <li nz-menu-item>Option 9</li>
+      <li nz-menu-item>Option 10</li>
+      <li nz-menu-item>Option 11</li>
+    </ul>
+  </li>
+</ul>
