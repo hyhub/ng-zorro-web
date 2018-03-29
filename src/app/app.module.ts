@@ -9,12 +9,16 @@ import {MenuComponent} from './menu/menu.component';
 import {FooterComponent} from './footer/footer.component';
 import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {MenuService} from './menu.service';
+import {MenuService} from './menu/menu.service';
 import {ItemService} from './dashboard/item.service';
+import {OrderComponent} from './order/order.component';
+import {CreditPassedComponent} from './credit-passed/credit-passed.component';
 
 const routeConfig: Routes = [
   {path: '', component: DashboardComponent},
-  {path: 'menu/:name', component: MenuComponent}
+  {path: 'menu/order', component: OrderComponent},
+  {path: 'menu/credit-passed', component: CreditPassedComponent},
+  {path: 'menu/credit-audit', component: MenuComponent}
 ];
 
 @NgModule({
@@ -22,7 +26,9 @@ const routeConfig: Routes = [
     AppComponent,
     MenuComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    OrderComponent,
+    CreditPassedComponent
   ],
   imports: [
     BrowserModule,

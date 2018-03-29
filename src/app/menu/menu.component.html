@@ -18,9 +18,16 @@
   </li>
   <li nz-submenu>
     <span title><i class="anticon anticon-bars"></i> 订单管理 </span>
+    <ul>
+      <li nz-menu-item><a [routerLink]="['menu/order']">订单列表</a></li>
+    </ul>
   </li>
   <li nz-submenu>
     <span title><i class="anticon anticon-bank"></i> 贷款管理 </span>
+    <ul>
+      <li nz-menu-item><a [routerLink]="['menu/credit-passed']">贷款列表-待审核</a></li>
+      <li nz-menu-item><a [routerLink]="['menu/credit-audit']">贷款列表-已通过</a></li>
+    </ul>
   </li>
   <li nz-submenu>
     <span title><i class="anticon anticon-wallet"></i> 还贷管理 </span>

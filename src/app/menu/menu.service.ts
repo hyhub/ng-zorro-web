@@ -21,6 +21,9 @@ export class MenuService {
     return this.menus; // 通过http请求后台获取
   }
 
+  loadContent(title: string): Menu {
+    return this.menus.find(x => x.title == title);
+  }
 }
 
 export class Menu {
