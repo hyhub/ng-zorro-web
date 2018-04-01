@@ -1,0 +1,96 @@
+<!--<nz-tabset>-->
+  <!--<nz-tab *ngFor="let tab of tabs">-->
+    <!--<ng-template #nzTabHeading>-->
+      <!--{{tab.name}}-->
+    <!--</ng-template>-->
+    <!--&lt;!&ndash;<span>{{tab.content}}</span>&ndash;&gt;-->
+  <!--</nz-tab>-->
+<!--</nz-tabset>-->
+<!--<nz-row>-->
+  <!--<nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">-->
+    <!--<nz-select style="width: 120px;" [(ngModel)]="selectedOption" (nzScrollToBottom)="scrollToBottom()">-->
+      <!--<nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option">-->
+      <!--</nz-option>-->
+      <!--<nz-option [nzLabel]="'disabled'" [nzDisabled]="true" [nzValue]="'disabled'" *ngIf="loading">-->
+        <!--<ng-template #nzOptionTemplate>-->
+          <!--<i class="anticon anticon-loading anticon-spin"></i> Loading...-->
+        <!--</ng-template>-->
+      <!--</nz-option>-->
+    <!--</nz-select>-->
+  <!--</nz-col>-->
+
+  <!--<nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">-->
+    <!--<nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'请输入查询内容'"></nz-input>-->
+  <!--</nz-col>-->
+  <!--<nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">-->
+    <!--<span>供应商名称</span>-->
+    <!--<nz-select style="width: 120px;" [(ngModel)]="selectedOption" (nzScrollToBottom)="scrollToBottom()">-->
+      <!--<nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option">-->
+      <!--</nz-option>-->
+      <!--<nz-option [nzLabel]="'disabled'" [nzDisabled]="true" [nzValue]="'disabled'" *ngIf="loading">-->
+        <!--<ng-template #nzOptionTemplate>-->
+          <!--<i class="anticon anticon-loading anticon-spin"></i> Loading...-->
+        <!--</ng-template>-->
+      <!--</nz-option>-->
+    <!--</nz-select>-->
+  <!--</nz-col>-->
+
+  <!--<nz-col class="col-sm-6">-->
+    <!--<div class="form-group">-->
+      <!--<label>选择日期：</label>-->
+      <!--<div class="input-group date" id='date1'>-->
+        <!--<input type="text" class="form-control">-->
+        <!--<span class="input-group-addon">-->
+                        <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                    <!--</span>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</nz-col>-->
+
+  <!--<nz-col class='input-group date' id='datetimepicker'>-->
+    <!--<input type='text' class="form-control" ng-model="dateTwo"/>-->
+    <!--<span class="input-group-addon">-->
+                        <!--<span class="glyphicon glyphicon-calendar"></span>-->
+                    <!--</span>-->
+  <!--</nz-col>-->
+
+<!--</nz-row>-->
+
+
+<nz-table #nzTable [nzDataSource]="data" [nzPageSize]="10" [nzTotal]="data.length"
+          [nzPageSizeSelectorValues] nzShowQuickJumper="true" nzShowTotal="true">
+  <thead nz-thead>
+  <tr>
+    <th nz-th></th>
+    <th nz-th><span>订单编号</span></th>
+    <th nz-th><span>用户id</span></th>
+    <th nz-th><span>用户姓名</span></th>
+    <th nz-th><span>订单类型</span></th>
+    <th nz-th><span>供应商名称</span></th>
+    <th nz-th><span>商品id</span></th>
+    <th nz-th><span>商品名称</span></th>
+    <th nz-th><span>商品数量</span></th>
+    <th nz-th><span>单价</span></th>
+    <th nz-th><span>总价</span></th>
+    <th nz-th><span>规格</span></th>
+    <th nz-th><span>下单时间</span></th>
+  </tr>
+  </thead>
+  <tbody nz-tbody>
+  <tr nz-tbody-tr *ngFor="let data of nzTable.data;let i = index">
+    <td nz-td>{{i+1}}</td>
+    <td nz-td>{{data.orderNo}}</td>
+    <td nz-td>{{data.userId}}</td>
+    <td nz-td>{{data.userName}}</td>
+    <td nz-td>{{data.orderType}}</td>
+    <td nz-td>{{data.suppyName}}</td>
+    <td nz-td>{{data.produceId}}</td>
+    <td nz-td>{{data.produceName}}</td>
+    <td nz-td>{{data.amount}}</td>
+    <td nz-td>{{data.price | currency: 2}}</td>
+    <td nz-td>{{data.totalAmount | currency: 2}}</td>
+    <td nz-td>{{data.rank}}</td>
+    <td nz-td>{{data.createTime}}</td>
+  </tr>
+  </tbody>
+</nz-table>
