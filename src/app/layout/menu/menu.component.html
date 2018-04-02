@@ -1,22 +1,22 @@
 <ul nz-menu [nzMode]="'inline'" [nzTheme]="theme?'dark':'light'">
-  <li nz-menu-item [nzSelected]="true" [routerLink]="['']">
-    <span title>Dashboard</span>
-  </li>
+  <!--<li nz-menu-item [nzSelected]="true" [routerLink]="['']">-->
+    <!--<span title>Dashboard</span>-->
+  <!--</li>-->
+  <!--<li nz-submenu [nzOpen]="true">-->
+    <!--<span title><i class="anticon anticon-user"></i> 用户管理 </span>-->
+    <!--<ul>-->
+      <!--<li nz-submenu>-->
+        <!--<span [routerLink]="['/menu','7']" title>商户列表</span>-->
+        <!--<ul>-->
+          <!--<li nz-menu-item><a [routerLink]="['/menu','7']">Option 7</a></li>-->
+          <!--<li nz-menu-item><a [routerLink]="['/menu','8']">Option 8</a></li>-->
+        <!--</ul>-->
+      <!--</li>-->
+      <!--<li nz-menu-item>商户授信列表</li>-->
+      <!--<li nz-menu-item>供应商列表</li>-->
+    <!--</ul>-->
+  <!--</li>-->
   <li nz-submenu [nzOpen]="true">
-    <span title><i class="anticon anticon-user"></i> 用户管理 </span>
-    <ul>
-      <li nz-submenu>
-        <span [routerLink]="['/menu','7']" title>商户列表</span>
-        <ul>
-          <li nz-menu-item><a [routerLink]="['/menu','7']">Option 7</a></li>
-          <li nz-menu-item><a [routerLink]="['/menu','8']">Option 8</a></li>
-        </ul>
-      </li>
-      <li nz-menu-item>商户授信列表</li>
-      <li nz-menu-item>供应商列表</li>
-    </ul>
-  </li>
-  <li nz-submenu>
     <span title><i class="anticon anticon-bars"></i> 订单管理 </span>
     <ul>
       <li nz-menu-item><a [routerLink]="['menu/order']">订单列表</a></li>

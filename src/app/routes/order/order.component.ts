@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -11,15 +12,15 @@ export class OrderComponent implements OnInit {
   selectedOption;
   loading = false;
   index = 0;
-
+  pos = 0;
   tabs = [
     {
+      key: 'orderList',
       name: '订单列表',
-      // content: '订单列表'
     },
     {
+      key: 'historyOrderList',
       name: '历史订单列表',
-      // content: '历史订单里列表'
     }
   ];
 
@@ -209,7 +210,7 @@ export class OrderComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   scrollToBottom() {
@@ -235,4 +236,7 @@ export class OrderComponent implements OnInit {
   }
 
 
+  to(item: any) {
+    this.router.navigateByUrl(`menu/credit-passed`);
+  }
 }

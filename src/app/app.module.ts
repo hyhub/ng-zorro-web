@@ -5,17 +5,18 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {NZ_LOCALE, zhCN, NgZorroAntdModule} from 'ng-zorro-antd';
 import {AppComponent} from './app.component';
-import {MenuComponent} from './menu/menu.component';
-import {FooterComponent} from './footer/footer.component';
+import {MenuComponent} from './layout/menu/menu.component';
+import {FooterComponent} from './layout/footer/footer.component';
 import {Routes, RouterModule} from '@angular/router';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {MenuService} from './menu/menu.service';
-import {ItemService} from './dashboard/item.service';
-import {OrderComponent} from './order/order.component';
-import {CreditPassedComponent} from './credit-passed/credit-passed.component';
+import {DashboardComponent} from './routes/dashboard/dashboard.component';
+import {MenuService} from './layout/menu/menu.service';
+import {ItemService} from './routes/dashboard/item.service';
+import {OrderComponent} from './routes/order/order.component';
+import {CreditPassedComponent} from './routes/credit-passed/credit-passed.component';
 
 const routeConfig: Routes = [
-  {path: '', component: DashboardComponent},
+  // {path: '',  component: DashboardComponent},
+  {path: '', redirectTo: 'menu/order', pathMatch: 'full'},
   {path: 'menu/order', component: OrderComponent},
   {path: 'menu/credit-passed', component: CreditPassedComponent},
   {path: 'menu/credit-audit', component: MenuComponent}
