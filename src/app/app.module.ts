@@ -11,15 +11,20 @@ import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './routes/dashboard/dashboard.component';
 import {MenuService} from './layout/menu/menu.service';
 import {ItemService} from './routes/dashboard/item.service';
-import {OrderComponent} from './routes/order/order.component';
 import {CreditPassedComponent} from './routes/credit-passed/credit-passed.component';
+import {OrderListComponent} from './routes/order/list/list.component';
+import {OrderHistoryListComponent} from './routes/order/history-list/history-list.component';
+import {TabsComponent} from './routes/order/tabs/tabs.component';
+import {OrderSearchFormComponent} from './routes/order/search-form/search-form.component';
 
 const routeConfig: Routes = [
   // {path: '',  component: DashboardComponent},
-  {path: '', redirectTo: 'menu/order', pathMatch: 'full'},
-  {path: 'menu/order', component: OrderComponent},
+  {path: '', redirectTo: 'menu/order/list', pathMatch: 'full'},
   {path: 'menu/credit-passed', component: CreditPassedComponent},
-  {path: 'menu/credit-audit', component: MenuComponent}
+  {path: 'menu/credit-audit', component: MenuComponent},
+  {path: 'menu/order/list', component: OrderListComponent},
+  {path: 'menu/order/historyList', component: OrderHistoryListComponent}
+
 ];
 
 @NgModule({
@@ -28,8 +33,11 @@ const routeConfig: Routes = [
     MenuComponent,
     FooterComponent,
     DashboardComponent,
-    OrderComponent,
-    CreditPassedComponent
+    CreditPassedComponent,
+    OrderListComponent,
+    OrderHistoryListComponent,
+    TabsComponent,
+    OrderSearchFormComponent
   ],
   imports: [
     BrowserModule,
