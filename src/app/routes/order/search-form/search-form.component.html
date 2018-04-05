@@ -1,0 +1,55 @@
+<div nz-row [nzType]="'flex'" [nzJustify]="'start'">
+  <div nz-col [nzSpan]="6">
+    <nz-input-group [nzSize]="'large'" nzCompact>
+      <nz-select style="width: auto; min-width: 80px;" [ngModel]="searchOptions" [nzPlaceHolder]="'请选择'">
+        <nz-option
+          *ngFor="let option of searchOptions"
+          [nzLabel]="option.value"
+          [nzValue]="option.value">
+        </nz-option>
+      </nz-select>
+      <input placeholder="请输入查询内容" style="width: 50%;" nz-input>
+    </nz-input-group>
+  </div>
+
+  <div nz-col [nzSpan]="6">
+    <label><span>供应商名称</span></label>
+    <nz-select style="width: 200px;" [(ngModel)]="single" [nzSize]="size" [nzPlaceHolder]="'请选择'">
+      <nz-option
+        *ngFor="let option of options"
+        [nzLabel]="option.label"
+        [nzValue]="option.value">
+      </nz-option>
+    </nz-select>
+  </div>
+
+  <div nz-col [nzSpan]="6">
+    <label><span>下单时间</span></label>
+    <nz-datepicker [(ngModel)]="orderDate" [nzPlaceHolder]="'选择日期'"></nz-datepicker>
+  </div>
+
+  <div nz-col [nzSpan]="6">
+    <label><span>订单类型</span></label>
+    <nz-select style="width: 100px;" [(ngModel)]="orderTypeM" [nzSize]="size" [nzPlaceHolder]="'请选择'">
+      <nz-option *ngFor="let option of orderType"
+                 [nzLabel]="option.value"
+                 [nzValue]="option.value">
+      </nz-option>
+    </nz-select>
+  </div>
+</div>
+<div nz-row [nzType]="'flex'" [nzJustify]="'start'" style="margin: 5px 0 0 0;">
+  <div nz-col [nzSpan]="11">
+    <button nz-button [nzType]="'primary'">
+      <span>查询</span>
+    </button>
+    <button nz-button [nzType]="'primary'">
+      <span>清除</span>
+    </button>
+  </div>
+  <div nz-col [nzSpan]="2" style="margin-top: 25px;">
+    <i class="anticon anticon-up-circle-o"></i>
+    <i class="anticon anticon-up-circle-o"></i>
+    <i class="anticon anticon-up-circle-o"></i>
+  </div>
+</div>
