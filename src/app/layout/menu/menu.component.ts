@@ -3,8 +3,7 @@ import {Menu, MenuService} from './menu.service';
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
 
