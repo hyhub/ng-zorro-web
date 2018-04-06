@@ -11,20 +11,20 @@ import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './routes/dashboard/dashboard.component';
 import {MenuService} from './layout/menu/menu.service';
 import {ItemService} from './routes/dashboard/item.service';
-import {CreditPassedComponent} from './routes/credit-passed/credit-passed.component';
+import {CreditPassedComponent} from './routes/credit/credit-passed/credit-passed.component';
 import {OrderListComponent} from './routes/order/list/list.component';
 import {OrderHistoryListComponent} from './routes/order/history-list/history-list.component';
-import {TabsComponent} from './routes/order/tabs/tabs.component';
+import {TabsComponent} from './routes/component/tabs/tabs.component';
 import {OrderSearchFormComponent} from './routes/order/search-form/search-form.component';
-import {CreditAuditComponent} from './routes/credit-audit/credit-audit.component';
+import {CreditAuditComponent} from './routes/credit/credit-audit/credit-audit.component';
 
 const routeConfig: Routes = [
   // {path: '',  component: DashboardComponent},
-  {path: '', redirectTo: 'menu/order/list', pathMatch: 'full'},
-  {path: 'menu/credit-passed', component: CreditPassedComponent},
-  {path: 'menu/credit-audit', component: CreditAuditComponent},
-  {path: 'menu/order/list', component: OrderListComponent},
-  {path: 'menu/order/historyList', component: OrderHistoryListComponent}
+  {path: '', redirectTo: 'order/list', pathMatch: 'full'},
+  {path: 'credit/passed', component: CreditPassedComponent},
+  {path: 'credit/audit', component: CreditAuditComponent},
+  {path: 'order/list', component: OrderListComponent},
+  {path: 'order/historyList', component: OrderHistoryListComponent}
 
 ];
 

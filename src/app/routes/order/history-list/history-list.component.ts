@@ -6,6 +6,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class OrderHistoryListComponent implements OnInit {
   pos = 1;
+  tabs = [
+    {
+      url: 'order/list',
+      name: '订单列表',
+    },
+    {
+      url: 'order/historyList',
+      name: '历史订单列表',
+    }
+  ];
   searchOptions = [{
     value: '订单编号'
   }, {

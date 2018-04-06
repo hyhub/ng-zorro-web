@@ -1,7 +1,7 @@
 <nz-tabset [nzSelectedIndex]="pos">
   <nz-tab *ngFor="let tab of tabs">
     <ng-template #nzTabHeading>
-      <div (click)="to(tab.key)">{{tab.name}}</div>
+      <div (click)="to(tab.url)">{{tab.name}}</div>
     </ng-template>
   </nz-tab>
 </nz-tabset>
