@@ -16,12 +16,13 @@ import {OrderListComponent} from './routes/order/list/list.component';
 import {OrderHistoryListComponent} from './routes/order/history-list/history-list.component';
 import {TabsComponent} from './routes/order/tabs/tabs.component';
 import {OrderSearchFormComponent} from './routes/order/search-form/search-form.component';
+import {CreditAuditComponent} from './routes/credit-audit/credit-audit.component';
 
 const routeConfig: Routes = [
   // {path: '',  component: DashboardComponent},
   {path: '', redirectTo: 'menu/order/list', pathMatch: 'full'},
   {path: 'menu/credit-passed', component: CreditPassedComponent},
-  {path: 'menu/credit-audit', component: MenuComponent},
+  {path: 'menu/credit-audit', component: CreditAuditComponent},
   {path: 'menu/order/list', component: OrderListComponent},
   {path: 'menu/order/historyList', component: OrderHistoryListComponent}
 
@@ -37,7 +38,8 @@ const routeConfig: Routes = [
     OrderListComponent,
     OrderHistoryListComponent,
     TabsComponent,
-    OrderSearchFormComponent
+    OrderSearchFormComponent,
+    CreditAuditComponent
   ],
   imports: [
     BrowserModule,
