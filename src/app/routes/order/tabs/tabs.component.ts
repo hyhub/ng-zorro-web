@@ -10,11 +10,11 @@ export class TabsComponent implements OnInit {
   @Input() pos = 0;
   tabs = [
     {
-      key: '/list',
+      key: 'list',
       name: '订单列表',
     },
     {
-      key: '/historyList',
+      key: 'historyList',
       name: '历史订单列表',
     }
   ];
@@ -30,4 +30,7 @@ export class TabsComponent implements OnInit {
     }
   }
 
+  to(item: any) {
+    this.router.navigateByUrl(`menu/order/${item}`);
+  }
 }

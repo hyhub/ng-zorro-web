@@ -6,6 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class OrderSearchFormComponent implements OnInit {
 
+  orderDate: Date = null;
 
   orderType = [{
     value: '烟草'
