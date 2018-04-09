@@ -1,0 +1,85 @@
+<div nz-row [nzType]="'flex'" [nzJustify]="'start'" *ngIf="expandForm">
+  <div nz-col [nzSpan]="8">
+    <nz-input-group [nzSize]="'large'" nzCompact>
+      <nz-select style="width: auto; min-width: 80px;"
+                 [(ngModel)]="_searchType" [nzPlaceHolder]="'请选择'">
+        <nz-option *ngFor="let option of searchOptions"
+                   [nzLabel]="option.value"
+                   [nzValue]="option.value">
+        </nz-option>
+      </nz-select>
+      <input [(ngModel)]="_searchValue" placeholder="请输入查询内容" style="width: 130px;" nz-input>
+    </nz-input-group>
+  </div>
+
+  <div nz-col [nzSpan]="8">
+    <label><span>&emsp;申请时间</span></label>
+    <nz-datepicker [(ngModel)]="_applyDate" [nzPlaceHolder]="'选择日期'"></nz-datepicker>
+  </div>
+
+  <div nz-col [nzSpan]="8">
+    <label><span>审核时间</span></label>
+    <nz-datepicker [(ngModel)]="_auditDate" [nzPlaceHolder]="'选择日期'"></nz-datepicker>
+  </div>
+</div>
+
+<div nz-row [nzType]="'flex'" [nzJustify]="'start'" style="margin: 5px 0px;" *ngIf="expandForm">
+  <div nz-col [nzSpan]="8">
+    <label><span>贷款到期日</span></label>
+    <nz-datepicker [(ngModel)]="_creditExpireDate" [nzPlaceHolder]="'选择日期'"></nz-datepicker>
+  </div>
+  <div nz-col [nzSpan]="8">
+    <label><span>账期到期日</span></label>
+    <nz-datepicker [(ngModel)]="_billExpireDate" [nzPlaceHolder]="'选择日期'"></nz-datepicker>
+  </div>
+  <div nz-col [nzSpan]="8">
+    <label><span>供应商公司名称</span></label>
+    <nz-select style="width: auto; min-width: 110px;" [(ngModel)]="_supplier" [nzPlaceHolder]="'请选择'">
+      <nz-option *ngFor="let option of searchOptions"
+                 [nzLabel]="option.value"
+                 [nzValue]="option.value">
+      </nz-option>
+    </nz-select>
+  </div>
+</div>
+
+<div nz-row [nzType]="'flex'" [nzJustify]="'start'" *ngIf="expandForm">
+  <div nz-col [nzSpan]="8">
+    <label><span>是否有账期</span></label>
+    <nz-select style="width: auto; min-width: 80px;" [(ngModel)]="_credit" [nzPlaceHolder]="'请选择'">
+      <nz-option *ngFor="let option of isCredit"
+                 [nzLabel]="option.label"
+                 [nzValue]="option.value">
+      </nz-option>
+    </nz-select>
+  </div>
+  <div nz-col [nzSpan]="8">
+    <label><span>&emsp;订单类型</span></label>
+    <nz-select style="width: auto; min-width: 80px;" [(ngModel)]="_orderType" [nzPlaceHolder]="'请选择'">
+      <nz-option
+        *ngFor="let option of orderType"
+        [nzLabel]="option.label"
+        [nzValue]="option.value">
+      </nz-option>
+    </nz-select>
+  </div>
+</div>
+
+<div nz-row [nzType]="'flex'" [nzJustify]="'start'" style="margin: 5px 0 0 0;" *ngIf="expandForm">
+  <div nz-col [nzSpan]="11">
+    <button nz-button (click)="_search($event)" [nzType]="'primary'">
+      <span>查询</span>
+    </button>
+    <button nz-button (click)="_reset($event)">
+      <span>清除</span>
+    </button>
+  </div>
+</div>
+<div nz-row [nzType]="'flex'" [nzJustify]="'center'" style="margin: 5px 0 0 0;">
+  <div nz-col [nzSpan]="2">
+    <a (click)="expandForm=!expandForm">
+      {{expandForm ? '收起' : '展开'}}
+      <i class="anticon" [class.anticon-down]="!expandForm" [class.anticon-up]="expandForm"></i>
+    </a>
+  </div>
+</div>

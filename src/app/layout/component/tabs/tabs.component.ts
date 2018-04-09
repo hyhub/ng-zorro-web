@@ -20,4 +20,5 @@ export class TabsComponent implements OnInit {
   to(item: any) {
     this.router.navigateByUrl(`${item}`);
   }
+
 }

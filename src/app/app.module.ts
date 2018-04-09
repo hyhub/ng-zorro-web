@@ -11,20 +11,25 @@ import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './routes/dashboard/dashboard.component';
 import {MenuService} from './layout/menu/menu.service';
 import {ItemService} from './routes/dashboard/item.service';
-import {CreditPassedComponent} from './routes/credit/credit-passed/credit-passed.component';
+import {CreditPassedComponent} from './routes/credit/passed/credit-passed.component';
 import {OrderListComponent} from './routes/order/list/list.component';
 import {OrderHistoryListComponent} from './routes/order/history-list/history-list.component';
-import {TabsComponent} from './routes/component/tabs/tabs.component';
-import {OrderSearchFormComponent} from './routes/order/search-form/search-form.component';
-import {CreditAuditComponent} from './routes/credit/credit-audit/credit-audit.component';
+import {TabsComponent} from './layout/component/tabs/tabs.component';
+import {OrderSearchFormComponent} from './layout/component/search-form/order-search-form.component';
+import {CreditAuditComponent} from './routes/credit/audit/credit-audit.component';
+import {CreditSearchFormComponent} from './layout/component/search-form/credit-search-form.component';
+import {CreditRefuseComponent} from './routes/credit/refuse/credit-refuse.component';
+import {CreditAllComponent} from './routes/credit/all/credit-all.component';
 
 const routeConfig: Routes = [
   // {path: '',  component: DashboardComponent},
   {path: '', redirectTo: 'order/list', pathMatch: 'full'},
+  {path: 'order/list', component: OrderListComponent},
+  {path: 'order/historyList', component: OrderHistoryListComponent},
   {path: 'credit/passed', component: CreditPassedComponent},
   {path: 'credit/audit', component: CreditAuditComponent},
-  {path: 'order/list', component: OrderListComponent},
-  {path: 'order/historyList', component: OrderHistoryListComponent}
+  {path: 'credit/refused', component: CreditRefuseComponent},
+  {path: 'credit/all', component: CreditAllComponent}
 
 ];
 
@@ -39,7 +44,10 @@ const routeConfig: Routes = [
     OrderHistoryListComponent,
     TabsComponent,
     OrderSearchFormComponent,
-    CreditAuditComponent
+    CreditAuditComponent,
+    CreditSearchFormComponent,
+    CreditRefuseComponent,
+    CreditAllComponent
   ],
   imports: [
     BrowserModule,

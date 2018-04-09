@@ -1,0 +1,46 @@
+<app-tabs [pos]="pos" [tabs]="tabs"></app-tabs>
+<app-credit-search-form></app-credit-search-form>
+
+<div class="table-operations" style="margin-bottom: 16px;">
+  <div nz-row [nzType]="'flex'" [nzJustify]="'start'">
+    <div nz-col [nzSpan]="18">
+      <button nz-button [nzLoading]="_operating" (click)="_export()">导出</button>
+    </div>
+    <div nz-col [nzSpan]="6">
+      <label><span style="margin-left: 8px;">&emsp;排序规则:</span></label>
+      <nz-select style="min-width: 100px;" [(ngModel)]="_orderRule" [nzPlaceHolder]="'请选择'">
+        <nz-option *ngFor="let option of _orderRules"
+                   [nzLabel]="option.label"
+                   [nzValue]="option.value">
+        </nz-option>
+      </nz-select>
+      <nz-radio-group [(ngModel)]="_radioValue">
+        <label nz-radio-button [nzValue]="'desc'">
+          <span>降序</span>
+        </label>
+        <label nz-radio-button [nzValue]="'asc'">
+          <span>升序</span>
+        </label>
+      </nz-radio-group>
+    </div>
+  </div>
+</div>
+
+<nz-table #nzTable [nzDataSource]="_dataSet" [nzPageSize]="10" (nzDataChange)="_displayDataChange($event)"
+          (nzPageIndexChange)="_refreshStatus()" (nzPageSizeChange)="_refreshStatus()"
+          [nzShowTotal]="true" [nzShowQuickJumper]="true" [nzPageSizeSelectorValues]="[10, 20, 30, 40, 50]"
+          style="word-break: keep-all;white-space:nowrap; overflow:scroll;"
+          [nzScroll]="{ x: 'auto', y: 'auto' }">
+  <thead nz-thead>
+  <tr>
+    <th nz-th></th>
+    <th nz-th *ngFor="let th of ths"><span>{{th.lable}}</span></th>
+  </tr>
+  </thead>
+  <tbody nz-tbody>
+  <tr nz-tbody-tr *ngFor="let data of nzTable.data; let i = index">
+    <td nz-td>{{i+1}}</td>
+    <td nz-td *ngFor="let th of ths">{{data.name}}</td>
+  </tr>
+  </tbody>
+</nz-table>
